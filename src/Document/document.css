@@ -1,0 +1,79 @@
+.doc-type {
+  font-size: 20px;
+  color: #4d4d4d;
+  font-weight: bold;
+}
+
+.divider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.divider .line {
+  background: #012255;
+  width: 100%;
+}
+
+.divider .title {
+  position: absolute;
+  padding: 0px 20px;
+  background: white;
+  text-transform: uppercase;
+  color: #012255;
+  font-weight: bold;
+}
+
+.item-field {
+  margin: 3px 0px;
+}
+
+.item-field span:first-child {
+}
+
+.data-list {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.data-list .header {
+  color: #012255;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.box {
+  background: #f2f2f2;
+}
+
+.rut {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14;
+  font-weight: bold;
+}
+
+.rut span:first-child {
+  text-transform: uppercase;
+}
+
+.qr {
+  display: flex;
+  align-items: center;
+}
+
+.qr .qr-img {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr .qr-info {
+  margin-left: 20px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}

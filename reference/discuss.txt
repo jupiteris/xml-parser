@@ -1,0 +1,32 @@
+So the new requirement is.
+A js page, which can then be embedded in the portal site developed in React.
+We will do a small sprint, with the design of a single Document Type to advance quickly 
+and present the product.
+
+The js page will have the graphical representation of the XML, 
+according to the following image.
+pls send me image
+
+Mapeo_Efactura.png
+Mapeo_Efactura.png
+I have to explain how I generate the QR. I can send you a C # code. 
+Is it correct for you?
+Inside the QR there is a URL made up of XML TAGs.
+
+image.png
+image.png
+
+image.png
+image.png
+I think we simplify the requirement a lot.
+Is it clear to you Andrey?
+1. Create E-Factura json page 
+that will contain the graphic representation of the XML receipt.
+2. Embed the page within the site developed in REACT.
+3. Integrate the Backend Api with the json page developed in point 1.
+Api_Document - http://200.58.131.157:9000/swagger/index.html
+
+In this api we are going to obtain the XML of the voucher to represent. 
+The operation to invoke is:
+GET / api / Document / {documentId} / {downloadInPdf}
+The parameters for this operation should be:
