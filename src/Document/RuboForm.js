@@ -44,13 +44,7 @@ export const RuboForm = ({ data }) => {
 
   return (
     <div className={classes.form}>
-      <TextField
-        select
-        value={rubo}
-        onChange={handleChange}
-        variant="outlined"
-        style={{ width: '13%' }}
-      >
+      <TextField select value={rubo} onChange={handleChange} variant="outlined" style={{ width: '13%' }}>
         {rubos.map((option) => (
           <MenuItem key={option.value} value={option.value}>
             {option.label}

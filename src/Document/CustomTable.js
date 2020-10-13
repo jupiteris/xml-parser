@@ -120,12 +120,7 @@ export const CustomTable = ({ data }) => {
             <span>Information de Rubrado</span>
             <div>
               <span>Aplicar a todo</span>
-              <Checkbox
-                checked={false}
-                onChange={() => console.log('here')}
-                inputProps={{ 'aria-label': 'primary checkbox' }}
-                style={{ marginLeft: 20 }}
-              />
+              <Checkbox checked={false} onChange={() => console.log('here')} inputProps={{ 'aria-label': 'primary checkbox' }} style={{ marginLeft: 20 }} />
             </div>
           </div>
           {forms.length ? forms.map((f, index) => <RuboForm data={f} key={index} />) : ''}

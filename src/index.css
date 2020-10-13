@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Exo';
+  src: local('Exo') url('./fonts/Exo-Regular.ttf') format('woff');
+}
+
+.body {
+  font-family: Exo;
+  font-size: 14px;
+}
