@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import './document.css';
+import convert from 'xml-js';
+import moment from 'moment';
+import Grid from '@material-ui/core/Grid';
+
 import { TitleDivider } from './TitleDivider';
 import { FieldList } from './FieldList';
 import { CustomTable } from './CustomTable';
 import { QRGenerater } from './QRGenerater';
-import Grid from '@material-ui/core/Grid';
-import convert from 'xml-js';
+import './document.css';
+
 import { eFacturaXml } from './test';
-import moment from 'moment';
 
 const generateQRUrl = (CFE) => {
   const { eFact, Signature } = CFE;
@@ -38,18 +40,18 @@ const generateQRUrl = (CFE) => {
 };
 
 const emisorStyle = {
-  name: { color: '#012255', fontSize: 16, fontWeight: 'bold' },
-  content: { fontSize: 16 }
+  name: { color: '#012255', fontWeight: 'bold' },
+  content: {}
 };
 
 const idDocStyle = {
-  name: { fontSize: 16 },
-  content: { fontSize: 16 }
+  name: {},
+  content: {}
 };
 
 const receptorStyle = {
-  name: { color: '#012255', fontSize: 14, fontWeight: 'bold' },
-  content: { fontSize: 14 }
+  name: { color: '#012255', fontSize: 12, fontWeight: 'bold' },
+  content: { fontSize: 12 }
 };
 
 const adendaStyle = {
@@ -70,7 +72,7 @@ export const Document = () => {
     const { Encabezado, Detalle, CAEData } = eFact;
     const { Emisor, Receptor, Totales, IdDoc } = Encabezado;
     const emisor = [
-      { name: 'Razon Social', content: Emisor['RznSoc']?._text },
+      { name: 'Razón Social', content: Emisor['RznSoc']?._text },
       { name: 'RUT', content: Emisor['RUCEmisor']?._text },
       { name: 'Descripción', content: Emisor['DomFiscal']?._text },
       { name: 'Telefax', content: Emisor['Telefono']?._text },
@@ -104,9 +106,9 @@ export const Document = () => {
       headers: [
         { name: 'N' },
         { name: 'Nombre Item' },
-        { name: 'Descripcion' },
+        { name: 'Descripción' },
         { name: 'Cantidad', align: 'center' },
-        { name: 'Precio unitario', align: 'center' },
+        { name: 'Período unitario', align: 'center' },
         { name: 'Importe', align: 'center' }
       ],
       rows: Detalle?.Item?.length
@@ -124,8 +126,8 @@ export const Document = () => {
       headers: [
         { name: 'N', align: 'center' },
         { name: 'Tipo de movimiento', align: 'center' },
-        { name: 'Tipe', align: 'center' },
-        { name: 'Codigo', align: 'center' },
+        { name: 'Tipo', align: 'center' },
+        { name: 'Código', align: 'center' },
         { name: 'Glosa' },
         { name: 'Indicador de fact', align: 'center' },
         { name: 'Valor', align: 'center' }
@@ -155,9 +157,9 @@ export const Document = () => {
     });
   }, []);
   return (
-    <>
+    <div className="doc">
       <p className="doc-type">E-Factura</p>
-      <Grid container spacing={5}>
+      <Grid container spacing={1}>
         <Grid item xs={12} md={8}>
           <TitleDivider text="datos del emisor" />
           <FieldList data={xml?.emisor ?? []} dataStyle={emisorStyle} title={xml?.nomComercial} />
@@ -179,7 +181,7 @@ export const Document = () => {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <TitleDivider text="detaile" />
+          <TitleDivider text="detalle" />
           {xml?.detalle && <CustomTable data={xml?.detalle} />}
         </Grid>
         <Grid item xs={12}>
@@ -204,6 +206,6 @@ export const Document = () => {
           <TitleDivider />
         </Grid>
       </Grid>
-    </>
+    </div>
   );
 };

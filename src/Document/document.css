@@ -1,5 +1,15 @@
+@font-face {
+  font-family: 'Exo';
+  src: local('Exo'), url('../fonts/Exo-Regular.ttf') format('woff');
+}
+
+.doc {
+  font-family: Exo;
+  font-size: 14px;
+}
+
 .doc-type {
-  font-size: 18px;
+  font-size: 16px;
   color: #4d4d4d;
   font-weight: bold;
 }
@@ -29,7 +39,10 @@
   margin: 3px 0px;
 }
 
-.item-field span:first-child {
+th,
+td {
+  font-family: Exo !important;
+  font-size: 14px !important;
 }
 
 .data-list {
