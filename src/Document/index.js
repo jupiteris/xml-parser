@@ -140,7 +140,7 @@ export const Document = () => {
       'CAE: ' + CAEData['CAE_ID']?._text,
       'Serie: ' + IdDoc['Serie']?._text,
       'Rango: ' + CAEData['DNro']?._text + ' - ' + CAEData['HNro']?._text,
-      'Fecha de vencimiento: ' + CAEData['FecVenc']?._text
+      'Fecha de vencimiento: ' + moment(CAEData['FecVenc']?._text).format('L')
     ];
     setXml({
       emisor: emisor,
